@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="it" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svapo 100 Celle - Il tuo negozio di svapo di fiducia</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#F5C042',
+                            500: '#E5A118',
+                            600: '#C2830E',
+                            glow: 'rgba(229, 161, 24, 0.2)'
+                        },
+                        dark: {
+                            900: '#0B0C10',
+                            800: '#12141A',
+                            700: '#1A1D24',
+                            600: '#262A34',
+                            500: '#333846'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0C10;
+            color: #E2E8F0;
+        }
+        .font-display {
+            font-family: 'Outfit', sans-serif;
+        }
+        .gold-glow {
+            box-shadow: 0 0 30px rgba(229, 161, 24, 0.15);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0C10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262A34;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E5A118;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-slate-200 antialiased selection:bg-gold-500 selection:text-black">
+
+    <!-- BARRA DI NAVIGAZIONE -->
+    <header class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-md border-b border-dark-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-3 group">
+                <!-- Immagine Logo -->
+            <img src="img/Adesivo_INFO-02.png" alt="Logo Svapo 100 Celle" class="w-20 h-20 object-contain group-hover:scale-105 transition">
+            <div>
+                <span class="font-display font-black text-xl tracking-wider text-white block leading-none">
+                    SVAPO <span class="text-gold-500">100 CELLE</span>
+                </span>
+                <span class="text-[10px] text-slate-400 tracking-widest uppercase font-mono">Store & Lounge</span>
+            </div>
+               
+                
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+                <a href="#chi-siamo" class="text-slate-300 hover:text-gold-500 transition">Chi Siamo</a>
+                <a href="#servizi" class="text-slate-300 hover:text-gold-500 transition">Tutto per lo Svapo</a>
+                <a href="#recensioni" class="text-slate-300 hover:text-gold-500 transition">Recensioni</a>
+                <a href="#orari" class="text-slate-300 hover:text-gold-500 transition">Orari</a>
+                <a href="#mappa" class="text-slate-300 hover:text-gold-500 transition">Dove Siamo</a>
+                <a href="#prenota" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gold-500/10 text-gold-500 border border-gold-500/30 hover:bg-gold-500 hover:text-black transition font-semibold">
+                    <i class="fa-solid fa-basket-shopping text-xs"></i> Prenota e Ritira
+                </a>
+            </nav>
+
+            <a href="tel:+390612345678" class="hidden lg:flex items-center gap-2 px-4 py-2 rounded-xl bg-dark-700 border border-dark-600 text-xs text-slate-200 hover:border-gold-500 transition font-mono">
+                <i class="fa-solid fa-phone text-gold-500"></i>
+                <span>Contattaci</span>
+            </a>
+
+            <!-- Pulsante Hamburger Mobile -->
+            <button onclick="toggleMobileMenu()" aria-label="Apri Menu" class="md:hidden text-slate-300 hover:text-gold-500 text-2xl p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menu Navigazione Mobile -->
+        <div id="mobileMenu" class="hidden md:hidden border-b border-dark-600 bg-dark-800 px-4 py-4 space-y-3">
+            <a href="#chi-siamo" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-500 py-1">Chi Siamo</a>
+            <a href="#servizi" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-500 py-1">Tutto per lo Svapo</a>
+            <a href="#recensioni" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-500 py-1">Recensioni</a>
+            <a href="#orari" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-500 py-1">Orari</a>
+            <a href="#mappa" onclick="toggleMobileMenu()" class="block text-slate-300 hover:text-gold-500 py-1">Dove Siamo</a>
+            <a href="#prenota" onclick="toggleMobileMenu()" class="block text-gold-500 font-semibold py-1">Prenota e Ritira</a>
+        </div>
+    </header>
+
+    <!-- SEZIONE HERO -->
+    <section id="hero" class="relative min-h-[85vh] flex items-center justify-center overflow-hidden border-b border-dark-600">
+        <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('img/sfondo_1.jpg?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/80 to-transparent"></div>
+
+        <div class="relative max-w-5xl mx-auto px-4 py-20 text-center z-10">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-gold-500/10 text-gold-500 border border-gold-500/30 uppercase tracking-widest mb-6">
+                <span class="w-2 h-2 rounded-full bg-gold-500 animate-pulse"></span>
+                Centocelle - Roma
+            </span>
+            <h1 class="font-display font-black text-4xl sm:text-6xl md:text-7xl text-white tracking-tight leading-tight mb-6">
+                Il tuo negozio di <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-gold-500 to-amber-600">svapo di fiducia</span>
+            </h1>
+            <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-8">
+                Punto di riferimento a Centocelle per sigarette elettroniche, liquidi pronti, aromi concentrati e consulenza specializzata su misura.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#prenota" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gold-500 hover:bg-gold-600 text-black font-bold uppercase tracking-wider transition shadow-lg shadow-gold-500/20 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-bag-shopping"></i> Prenota e Ritira
+                </a>
+                <a href="#chi-siamo" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-dark-800 hover:bg-dark-700 text-white font-semibold border border-dark-600 transition flex items-center justify-center gap-2">
+                    Scopri il negozio
+                </a>
+            </div>
+
+            <!-- Stats Badge -->
+            <div class="mt-16 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+                <div class="p-4 rounded-xl bg-dark-800/80 border border-dark-600">
+                    <span class="block font-display font-black text-2xl text-gold-500">100%</span>
+                    <span class="text-xs text-slate-400 uppercase tracking-wider">Qualità Garantita</span>
+                </div>
+                <div class="p-4 rounded-xl bg-dark-800/80 border border-dark-600">
+                    <span class="block font-display font-black text-2xl text-gold-500">240+</span>
+                    <span class="text-xs text-slate-400 uppercase tracking-wider">Recensioni 5 Stelle</span>
+                </div>
+                <div class="p-4 rounded-xl bg-dark-800/80 border border-dark-600 col-span-2 sm:col-span-1">
+                    <span class="block font-display font-black text-2xl text-gold-500">Ritiro</span>
+                    <span class="text-xs text-slate-400 uppercase tracking-wider">In Negozio Rapido</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE CHI SIAMO -->
+    <section id="chi-siamo" class="py-20 border-b border-dark-600 bg-dark-800/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-gold-500 to-amber-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                    <div class="relative rounded-2xl overflow-hidden border border-dark-600 bg-dark-800">
+    <img src="img\Negozio_2.png?auto=format&fit=crop&w=900&q=80" alt="Negozio Svapo Centocelle" class="w-full h-80 sm:h-96 object-cover">
+</div>
+                </div>
+
+                <div class="space-y-6">
+                    <span class="text-xs font-bold text-gold-500 uppercase tracking-widest">Chi Siamo</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-black text-white">
+                        Passione per lo svapo, cura per le persone
+                    </h2>
+                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                        Svapo 100 Celle nasce nel cuore di Centocelle, con un obiettivo chiaro: offrire il meglio del mondo dello svapo in un ambiente accogliente e senza fronzoli.
+
+Emilio — il proprietario — non si limita a vendere: ascolta, consiglia e trova la soluzione giusta per ogni cliente, che sia un principiante curioso o uno svapatore esperto in cerca di gusti rari.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-dark-800 border border-dark-600">
+                            <i class="fa-solid fa-headset text-gold-500 text-xl mb-2"></i>
+                            <h3 class="font-bold text-sm text-white">Assistenza Su Misura</h3>
+                            <p class="text-xs text-slate-400 mt-1">Consulenza personalizzata per ogni esigenza.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-dark-800 border border-dark-600">
+                            <i class="fa-solid fa-box-open text-gold-500 text-xl mb-2"></i>
+                            <h3 class="font-bold text-sm text-white">Vasta Scelta</h3>
+                            <p class="text-xs text-slate-400 mt-1">Aromi, liquidi pronti, hardware ed accessori.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODOTTI E SERVIZI -->
+    <section id="servizi" class="relative py-20 border-b border-dark-600 bg-cover bg-center overflow-hidden" style="background-image: url('img/Boccette.jpg');">
+        <!-- Overlay scuro per garantire la leggibilità dei testi sopra l'immagine -->
+        <div class="absolute inset-0 bg-dark-900/85 backdrop-blur-[2px]"></div>
+
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 z-10">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold text-gold-500 uppercase tracking-widest">Servizi</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-black text-white mt-2">Tutto per il tuo svapo</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-dark-800/90 backdrop-blur-md border border-dark-600 hover:border-gold-500/50 transition duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-500 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-white mb-2">Sigarette Elettroniche</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Pod mod, kit completi e box mod dei brand più affidabili sul mercato.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-dark-800/90 backdrop-blur-md border border-dark-600 hover:border-gold-500/50 transition duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-500 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-white mb-2">Liquidi e Aromi</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Liquidi pronti 10ml, miniShot, Shot 20+40 ed aromi concentrati per ogni gusto.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-dark-800/90 backdrop-blur-md border border-dark-600 hover:border-gold-500/50 transition duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-500 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-white mb-2">Accessori & Ricambi</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Resistenze, pod di ricambio, cotone, batterie e vetri per i tuoi atomizzatori.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-dark-800/90 backdrop-blur-md border border-dark-600 hover:border-gold-500/50 transition duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-500 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-white mb-2">Supporto Tecnico</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Rigenerazione, pulizia, risoluzione problemi e consigli pratici in negozio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE PRENOTA E RITIRA -->
+    <section id="prenota" class="py-20 border-b border-dark-600 bg-dark-800/40 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            
+            <div class="text-center mb-10">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-gold-500/10 text-gold-500 border border-gold-500/30 uppercase tracking-wider mb-3">
+                    <span class="w-2 h-2 rounded-full bg-gold-500 animate-ping"></span>
+                    Servizio Ritiro Rapido
+                </span>
+                <h2 class="font-display text-3xl sm:text-5xl font-black text-white tracking-tight mb-3">
+                    PRENOTA E <span class="text-gold-500 underline decoration-gold-500/40 decoration-wavy decoration-1"></span>RITIRA</span>
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
+                    Richiedi informazioni sui prodotti disponibili o prenota i tuoi liquidi per il ritiro diretto nel nostro store.
+                </p>
+            </div>
+
+            <!-- Banner Store -->
+            <div class="bg-dark-800 border border-dark-600 border-l-4 border-l-gold-500 rounded-xl p-4 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-lg">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-store text-gold-500 text-lg"></i>
+                    <span class="font-bold text-xs sm:text-sm tracking-wider uppercase text-gold-500">NEGOZIO SVAPO 100 CELLE</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs sm:text-sm font-mono text-slate-300">
+                    <i class="fa-solid fa-envelope text-slate-500"></i>
+                    <span>svapo100celle@gmail.com</span>
+                </div>
+            </div>
+
+            <!-- Contenitore Form -->
+            <div class="bg-dark-800 border border-dark-600 rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden gold-glow">
+                
+                <form id="mainForm" onsubmit="handleFormSubmit(event)" class="space-y-6 relative z-10">
+                    
+                    <!-- 1. Dati Personali -->
+                    <div class="space-y-4">
+                        <h3 class="text-xs font-bold text-gold-500 uppercase tracking-widest flex items-center gap-2 border-b border-dark-600 pb-2.5">
+                            <i class="fa-solid fa-user-gear"></i> 1. Dati Personali
+                        </h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="nome" class="block text-xs font-medium text-slate-300 mb-1.5">Nome *</label>
+                                <input type="text" id="nome" required placeholder="Es. Mario"
+                                    class="w-full px-4 py-2.5 bg-dark-900 border border-dark-600 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 text-sm text-white placeholder-slate-600 transition outline-none">
+                            </div>
+
+                            <div>
+                                <label for="cognome" class="block text-xs font-medium text-slate-300 mb-1.5">Cognome *</label>
+                                <input type="text" id="cognome" required placeholder="Es. Rossi"
+                                    class="w-full px-4 py-2.5 bg-dark-900 border border-dark-600 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 text-sm text-white placeholder-slate-600 transition outline-none">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="telefono" class="block text-xs font-medium text-slate-300 mb-1.5">Telefono *</label>
+                                <input type="tel" id="telefono" required placeholder="Es. 3331234567"
+                                    class="w-full px-4 py-2.5 bg-dark-900 border border-dark-600 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 text-sm text-white placeholder-slate-600 transition outline-none">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-xs font-medium text-slate-300 mb-1.5">Email *</label>
+                                <input type="email" id="email" required placeholder="mario.rossi@email.it"
+                                    class="w-full px-4 py-2.5 bg-dark-900 border border-dark-600 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 text-sm text-white placeholder-slate-600 transition outline-none">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Selezione Servizio -->
+                    <div class="space-y-2 pt-2">
+                        <label for="servizio" class="block text-xs font-bold text-gold-500 uppercase tracking-widest border-b border-dark-600 pb-2.5">
+                            <i class="fa-solid fa-list-check"></i> 2. Quale servizio richiedere? *
+                        </label>
+                        <div class="relative">
+                            <select id="servizio" onchange="toggleServiceSection()" required
+                                class="w-full px-4 py-3 bg-dark-900 border border-gold-500/50 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 text-sm text-white transition duration-200 outline-none appearance-none cursor-pointer font-medium">
+                                <option value="" disabled selected>-- Seleziona Info oppure Prenota e Ritira --</option>
+                                <option value="info">Info generali / Disponibilità</option>
+                                <option value="prenota">Prenota e Ritira in negozio</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gold-500">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sezione Info dinamica -->
+                    <div id="sectionInfo" class="hidden transition-all duration-300 space-y-3 bg-dark-900 p-4 sm:p-5 rounded-xl border border-dark-600">
+                        <div class="flex justify-between items-center">
+                            <label for="richiestaInfo" class="block text-xs font-semibold text-gold-500 uppercase tracking-wider">
+                                Messaggio Informativo (Max 300 caratteri) *
+                            </label>
+                            <span id="charCounter" class="text-xs text-slate-400 font-mono">300 rimasti</span>
+                        </div>
+                        <textarea id="richiestaInfo" rows="4" maxlength="300" oninput="updateCharCount()"
+                            placeholder="Inserisci qui le tue domande riguardo disponibilità, prodotti o accessori..."
+                            class="w-full p-3.5 bg-dark-800 border border-dark-600 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 text-sm text-white placeholder-slate-600 transition outline-none resize-none"></textarea>
+                    </div>
+
+                    <!-- Sezione Prenota e Ritira dinamica -->
+                    <div id="sectionPrenota" class="hidden transition-all duration-300 space-y-5 bg-dark-900 p-4 sm:p-5 rounded-xl border border-dark-600">
+                        <div>
+                            <span class="block text-xs font-bold text-gold-500 uppercase tracking-wider mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-bottle-droplet"></i> Tipo Liquido * (Seleziona una o più opzioni)
+                            </span>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-dark-800 border border-dark-600 hover:border-gold-500/60 cursor-pointer transition group">
+                                    <input type="checkbox" name="tipoLiquido" value="Aroma concentrato 10ml" class="w-4 h-4 rounded border-dark-600 text-gold-500 focus:ring-gold-500 bg-dark-900">
+                                    <span class="text-xs sm:text-sm text-slate-200 group-hover:text-white transition font-medium">Aroma concentrato 10ml</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-dark-800 border border-dark-600 hover:border-gold-500/60 cursor-pointer transition group">
+                                    <input type="checkbox" name="tipoLiquido" value="Liquido pronto" class="w-4 h-4 rounded border-dark-600 text-gold-500 focus:ring-gold-500 bg-dark-900">
+                                    <span class="text-xs sm:text-sm text-slate-200 group-hover:text-white transition font-medium">Liquido pronto</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-dark-800 border border-dark-600 hover:border-gold-500/60 cursor-pointer transition group">
+                                    <input type="checkbox" name="tipoLiquido" value="miniShot 10+10ml" class="w-4 h-4 rounded border-dark-600 text-gold-500 focus:ring-gold-500 bg-dark-900">
+                                    <span class="text-xs sm:text-sm text-slate-200 group-hover:text-white transition font-medium">miniShot 10+10ml</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-dark-800 border border-dark-600 hover:border-gold-500/60 cursor-pointer transition group">
+                                    <input type="checkbox" name="tipoLiquido" value="Shot 20+40ml" class="w-4 h-4 rounded border-dark-600 text-gold-500 focus:ring-gold-500 bg-dark-900">
+                                    <span class="text-xs sm:text-sm text-slate-200 group-hover:text-white transition font-medium">Shot 20+40ml</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5 pt-2">
+                            <label for="dettaglioOrdine" class="block text-xs font-semibold text-slate-300">
+                                Specifiche Liquidi / Gusti e Nicotina
+                            </label>
+                            <textarea id="dettaglioOrdine" rows="3" placeholder="Es. N. 2 Mentolati, N. 1 Fruttato con nicotina 3mg/ml..."
+                                class="w-full p-3.5 bg-dark-800 border border-dark-600 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 text-sm text-white placeholder-slate-600 transition outline-none resize-none"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div id="submitBtnContainer" class="hidden pt-4">
+                        <button type="submit" id="btnSubmit"
+                            class="w-full py-4 px-6 rounded-xl font-bold text-black bg-gold-500 hover:bg-gold-600 transition-all duration-300 shadow-xl shadow-gold-500/20 active:scale-[0.99] flex items-center justify-center gap-2 tracking-wide uppercase text-sm">
+                            <i class="fa-solid fa-paper-plane text-black"></i>
+                            <span id="btnText">Invia Richiesta</span>
+                        </button>
+                        <p class="text-center text-xs text-slate-400 mt-3">
+                            L'invio reindirizzerà la richiesta all'indirizzo e-mail <span class="text-gold-500 font-mono font-medium">svapo100celle@gmail.com</span>.
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RECENSIONI -->
+    <section id="recensioni" class="py-20 border-b border-dark-600">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold text-gold-500 uppercase tracking-widest">Feedbacks</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-black text-white mt-2">240+ recensioni, tutte a 5 stelle</h2>
+                <div class="flex items-center justify-center gap-1 text-gold-500 text-lg mt-3">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span class="text-slate-300 text-sm font-bold ml-2">5.0 su Google</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-dark-800 border border-dark-600">
+                    <div class="flex items-center gap-1 text-gold-500 text-xs mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-300 italic mb-4">"Proprietario disponibilissimo e molto preparato. Mi ha consigliato il liquido perfetto per smettere con le sigarette tradizionali."</p>
+                    <span class="block text-xs font-bold text-white">- Marco R.</span>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-dark-800 border border-dark-600">
+                    <div class="flex items-center gap-1 text-gold-500 text-xs mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-300 italic mb-4">"Ottimo servizio di prenota e ritira. Ho effettuato l'ordine online ed era pronto appena sono arrivato in negozio!"</p>
+                    <span class="block text-xs font-bold text-white">- Andrea T.</span>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-dark-800 border border-dark-600">
+                    <div class="flex items-center gap-1 text-gold-500 text-xs mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-slate-300 italic mb-4">"Il miglior vape shop di Centocelle. Prezzi onesti e selezione vasta di Shot e aromi."</p>
+                    <span class="block text-xs font-bold text-white">- Giulia M.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORARI -->
+    <section id="orari" class="py-20 border-b border-dark-600 bg-dark-800/40">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <div class="bg-dark-800 p-6 sm:p-8 rounded-2xl border border-dark-600">
+                    <h3 class="font-display font-bold text-xl text-white mb-6 flex items-center gap-2">
+                        <i class="fa-regular fa-clock text-gold-500"></i> Quando siamo aperti
+                    </h3>
+
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <div class="flex justify-between py-2 border-b border-dark-700">
+                            <span class="text-slate-400">Lunedì</span>
+                            <span class="font-mono text-white font-medium">16:00 - 20:00</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-dark-700">
+                            <span class="text-slate-400">Martedì - Sabato</span>
+                            
+                            <span class="font-mono text-white font-medium">09:30 - 12:30 | 16:00 - 20:00</span>
+                        </div>
+                        <div class="flex justify-between py-2 text-slate-500">
+                            <span>Domenica</span>
+                            <span class="font-mono font-semibold text-red-400">CHIUSO</span>
+                        </div>
+                    </div>
+
+                    <!-- Indicatore di Stato Live -->
+                    <div id="shopStatus" class="mt-6 p-3 rounded-xl bg-green-500/10 border border-green-500/30 text-green-400 text-xs font-bold flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
+                        Stato negozio: Verifico orario...
+                    </div>
+                </div>
+
+                <div class="space-y-6 flex flex-col justify-between">
+                    <div class="bg-dark-800 p-6 sm:p-8 rounded-2xl border border-dark-600 space-y-4">
+                        <h3 class="font-display font-bold text-xl text-white flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-gold-500"></i> Dove trovarci
+                        </h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Siamo in Via delle Ninfee 29 vicino la fermata della metro C, nel cuore di Centocelle. Facili da trovare, difficili da dimenticare..
+                        </p>
+                        <div class="pt-2 text-xs space-y-2 font-mono text-slate-400">
+                            <div><i class="fa-solid fa-envelope text-gold-500 mr-2"></i>svapo100celle@gmail.com</div>
+                            <div><i class="fa-brands fa-whatsapp text-gold-500 mr-2"></i>Assistenza Rapida WhatsApp</div>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/390612345678" target="_blank" class="p-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-center text-sm transition flex items-center justify-center gap-2 uppercase tracking-wider">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Contattaci su WhatsApp
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPPA GOOGLE -->
+   <!-- MAPPA GOOGLE -->
+<section id="mappa" class="h-80 w-full relative bg-dark-800 border-b border-dark-600 flex justify-center items-center">
+    <iframe title="Mappa Svapo Centocelle" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.486408227174!2d12.565179576508362!3d41.882395265144616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f63bffbf55a69%3A0xa688343c12b23cb4!2sSvapo%20100%20Celle!5e0!3m2!1sit!2sit!4v1791390030297!5m2!1sit!2sit" 
+            class="w-full h-full max-w-6xl mx-auto" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="strict-origin-when-cross-origin">
+    </iframe>
+</section>
+
+    <!-- MODALE CONFERMA MAILTO -->
+    <div id="confirmationModal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-dark-800 border border-gold-500/30 rounded-2xl max-w-md w-full p-6 text-center shadow-2xl relative">
+            <div class="w-16 h-16 bg-gold-500/10 text-gold-500 rounded-full flex items-center justify-center mx-auto mb-4 border border-gold-500/30 text-2xl">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="font-display text-2xl font-black text-white mb-2" id="modalTitle">Richiesta Pronta!</h3>
+            <p class="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed" id="modalMessage">
+                I tuoi dati sono pronti per l'invio all'indirizzo <strong>svapo100celle@gmail.com</strong>.
+            </p>
+            
+            <div class="space-y-3">
+                <a id="directMailtoLink" href="#" class="block w-full py-3.5 px-4 bg-gold-500 hover:bg-gold-600 text-black font-bold rounded-xl text-sm transition uppercase tracking-wider">
+                    Apri E-mail e Invia
+                </a>
+                <button onclick="closeModal()" class="w-full py-2.5 px-4 bg-dark-700 hover:bg-dark-600 text-slate-300 rounded-xl text-xs font-medium transition">
+                    Torna Indietro
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-900 py-8 text-center text-xs text-slate-500 border-t border-dark-600">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>© <span id="year"></span> <strong class="text-white">Svapo 100 Celle</strong> - Sigarette Elettroniche & Prenota e Ritira Centocelle (Roma)</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT JAVASCRIPT -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function toggleServiceSection() {
+            const servizio = document.getElementById('servizio').value;
+            const sectionInfo = document.getElementById('sectionInfo');
+            const sectionPrenota = document.getElementById('sectionPrenota');
+            const submitBtnContainer = document.getElementById('submitBtnContainer');
+            const btnText = document.getElementById('btnText');
+            const richiestaInfoInput = document.getElementById('richiestaInfo');
+
+            if (servizio === 'info') {
+                sectionInfo.classList.remove('hidden');
+                sectionPrenota.classList.add('hidden');
+                submitBtnContainer.classList.remove('hidden');
+                btnText.textContent = "Invia Richiesta Info";
+                richiestaInfoInput.setAttribute('required', 'required');
+            } else if (servizio === 'prenota') {
+                sectionInfo.classList.add('hidden');
+                sectionPrenota.classList.remove('hidden');
+                submitBtnContainer.classList.remove('hidden');
+                btnText.textContent = "Invia Prenotazione e Ritira";
+                richiestaInfoInput.removeAttribute('required');
+            } else {
+                sectionInfo.classList.add('hidden');
+                sectionPrenota.classList.add('hidden');
+                submitBtnContainer.classList.add('hidden');
+                richiestaInfoInput.removeAttribute('required');
+            }
+        }
+
+        function updateCharCount() {
+            const textarea = document.getElementById('richiestaInfo');
+            const counter = document.getElementById('charCounter');
+            const maxLength = 300;
+            const currentLength = textarea.value.length;
+            const remaining = maxLength - currentLength;
+
+            counter.textContent = `${remaining} rimasti`;
+
+            if (remaining <= 30) {
+                counter.classList.add('text-gold-500');
+                counter.classList.remove('text-slate-400');
+            } else {
+                counter.classList.remove('text-gold-500');
+                counter.classList.add('text-slate-400');
+            }
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value.trim();
+            const cognome = document.getElementById('cognome').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const servizio = document.getElementById('servizio').value;
+
+            const recipient = "svapo100celle@gmail.com";
+            let subject = "";
+            let body = "";
+
+            if (servizio === "info") {
+                const testoInfo = document.getElementById('richiestaInfo').value.trim();
+                subject = `Richiesta Info - ${nome} ${cognome}`;
+                
+                body = `RICHIESTA DI INFORMAZIONI\n` +
+                       `======================================\n` +
+                       `Nome: ${nome}\n` +
+                       `Cognome: ${cognome}\n` +
+                       `Telefono: ${telefono}\n` +
+                       `Email: ${email}\n` +
+                       `======================================\n` +
+                       `Messaggio:\n${testoInfo}\n`;
+
+            } else if (servizio === "prenota") {
+                const checkboxes = document.querySelectorAll('input[name="tipoLiquido"]:checked');
+                const tipiSelezionati = Array.from(checkboxes).map(cb => cb.value);
+                const dettaglioOrdine = document.getElementById('dettaglioOrdine').value.trim();
+
+                if (tipiSelezionati.length === 0) {
+                    alert("Seleziona almeno un tipo di liquido prima di procedere.");
+                    return;
+                }
+
+                subject = `Nuova Prenotazione e Ritiro - ${nome} ${cognome}`;
+
+                body = `PRENOTAZIONE E RITIRO IN NEGOZIO\n` +
+                       `======================================\n` +
+                       `Cliente: ${nome} ${cognome}\n` +
+                       `Telefono: ${telefono}\n` +
+                       `Email: ${email}\n` +
+                       `======================================\n` +
+                       `Tipi di liquido:\n- ${tipiSelezionati.join('\n- ')}\n\n` +
+                       `Note e Gusti:\n${dettaglioOrdine || 'Nessuna nota aggiuntiva'}\n`;
+            }
+
+            const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            const modalTitle = document.getElementById('modalTitle');
+            const modalMessage = document.getElementById('modalMessage');
+            const directMailtoLink = document.getElementById('directMailtoLink');
+
+            if (servizio === "info") {
+                modalTitle.textContent = "Richiesta Info Pronta!";
+                modalMessage.innerHTML = `Grazie <strong>${nome}</strong>, la tua richiesta di informazioni è pronta per l'invio a <strong>svapo100celle@gmail.com</strong>.`;
+            } else {
+                modalTitle.textContent = "Prenotazione Pronta!";
+                modalMessage.innerHTML = `Grazie <strong>${nome}</strong>, la tua prenotazione per il ritiro è pronta per l'invio a <strong>svapo100celle@gmail.com</strong>.`;
+            }
+
+            directMailtoLink.href = mailtoUrl;
+            document.getElementById('confirmationModal').classList.remove('hidden');
+
+            setTimeout(() => {
+                window.location.href = mailtoUrl;
+            }, 500);
+        }
+
+        function closeModal() {
+            document.getElementById('confirmationModal').classList.add('hidden');
+        }
+
+        // Calcolo orario di apertura
+        function checkShopStatus() {
+            const now = new Date();
+            const day = now.getDay(); // 0 = Dom, 1 = Lun, ..., 6 = Sab
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const currentTime = hours * 60 + minutes;
+
+            const morningOpen = 9 * 60 + 30; // 09:30
+            const morningClose = 13 * 60; // 13:00
+            const afternoonOpen = 16 * 60; // 16:00
+            const afternoonCloseWeek = 19 * 60 + 30; // 19:30
+            const afternoonCloseSat = 19 * 60; // 19:00
+
+            const statusElem = document.getElementById('shopStatus');
+
+            if (day === 0) {
+                setClosedStatus(statusElem, "Chiuso oggi (Domenica)");
+                return;
+            }
+
+            const afternoonClose = (day === 6) ? afternoonCloseSat : afternoonCloseWeek;
+
+            const isOpenMorning = currentTime >= morningOpen && currentTime < morningClose;
+            const isOpenAfternoon = currentTime >= afternoonOpen && currentTime < afternoonClose;
+
+            if (isOpenMorning || isOpenAfternoon) {
+                statusElem.className = "mt-6 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold flex items-center gap-2";
+                statusElem.innerHTML = `<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span> Stato negozio: APERTO ORA`;
+            } else {
+                setClosedStatus(statusElem, "Stato negozio: CHIUSO ORA");
+            }
+        }
+
+        function setClosedStatus(elem, text) {
+            elem.className = "mt-6 p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold flex items-center gap-2";
+            elem.innerHTML = `<span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> ${text}`;
+        }
+
+        checkShopStatus();
+    </script>
+</body>
+</html>
